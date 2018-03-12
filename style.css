@@ -1,22 +1,32 @@
 body{
-    background-color: black;
-    color: white;
+    background-color: rgb(239, 239, 239);
+    color: black;
     margin: 0;
-}
-.topNavBar{
-    padding: 20px 16px 20px 16px;
-}
-a{
-    text-decoration: none;
-    color: inherit;
 }
 .clearfix::after{
     content: '';
     display: block;
     clear: both;
 }
+a{
+    text-decoration: none;
+    color: inherit;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+.topNavBar{
+    padding: 20px 16px 20px 16px;
+    position: fixed;
+    width: 100%;
+}
+.topNavBar .topNavBar-inner{
+    margin-right: 32px;
+}
 .topNavBar .logo{
     font-family: "Arial Black";
+    font-weight: bold;
     font-size: 24px;
     padding-top: 3px ;
     padding-bottom: 4px ;
@@ -28,21 +38,20 @@ a{
 .topNavBar .logo .card{
     color:#9a9da2;
 }
-.topNavBar>nav{
+.topNavBar nav{
     padding-top: 7px;
 }
-.topNavBar>nav>ul{
+.topNavBar nav>ul{
     padding: 0;
     margin: 0;
 }
-
-.topNavBar>nav>ul>li{
+.topNavBar nav>ul>li{
     float: left;
     display: block;
     margin-left: 17px;
     margin-right: 17px;
 }
-.topNavBar>nav>ul>li>a{
+.topNavBar nav>ul>li>a{
     display: block;
     font-size: 12px;
     color: #b7b7b7;
@@ -52,8 +61,58 @@ a{
     padding-bottom: 5px;
     padding-top: 5px;
 }
-
-.topNavBar>nav>ul>li>a:hover{
+.topNavBar nav>ul>li>a:hover{
     border-bottom: 3px solid #e06567;
 }
+.banner{
+    background-image: url(./img/rs-cover.jpg);
+    height: 515px;
+    background-position: center;
+    background-size: cover;
+}
+.banner .mask{
+    background-color: rgba(0, 0, 0,0.8);
+    height: 515px;
+}
 
+.usercard{
+    border: 1px solid green;
+    background-color: rgb(255, 255, 255);
+    max-width: 940px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 50px;
+}
+
+.usercard .picture{
+    margin-right: 67px; 
+}
+
+.usercard .welcome{
+    background-color: #e6686a;
+    color: rgb(255, 255, 255);
+    padding: 4px 16px  4px 16px;
+    position: relative;
+}
+
+.usercard .triangle{
+    display: block;
+    width:0px;
+    height:0px;
+    border:8px solid  #e6686a;
+    border-right-color:transparent;
+    border-bottom-color:transparent;
+    position: absolute;
+    margin-left: 5px;
+}
+dl{
+    border:1px solid blue;
+}
+.usercard dt{
+    float: left;
+    width: 30%
+}
+.usercard dl{
+    float: left;
+    width: 70%
+}

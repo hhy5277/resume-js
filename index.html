@@ -8,31 +8,38 @@
 	<link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <div class="topNavBar clearfix">
-			<a class="logo" href="#" alt="logo" style="float:left">
+    <div class="topNavBar ">
+			<div class="topNavBar-inner clearfix" >
+			  <a class="logo" href="#" alt="logo" style="float:left">
 				<span class="rs">RS</span><span class="card">card</span>
-			</a>
-	    <nav style="float:right">
-			  <ul class="clearfix">
-		      <li><a href="#">关于</a></li>
-		      <li><a href="#">技能</a></li>
-		      <li><a href="#">作品</a></li>
-		      <li><a href="#">博客</a></li>
-		      <li><a href="#">日历</a></li>	
-		      <li><a href="#">联系方式</a></li>
-		      <li><a href="#">其他</a></li>
-		     </ul>
-	    </nav>
+			  </a>
+	      <nav style="float:right">
+			    <ul class="clearfix">
+		        <li><a href="#">关于</a></li>
+		        <li><a href="#">技能</a></li>
+		     	  <li><a href="#">作品</a></li>
+		     	  <li><a href="#">博客</a></li>
+		        <li><a href="#">日历</a></li>	
+		        <li><a href="#">联系方式</a></li>
+		        <li><a href="#">其他</a></li>
+		      </ul>
+		    </nav>
+		  </div>
 	  </div>
-	<div class="banner" style="background-image:url(#)"></div>
+	<div class="banner" >
+		<div class="mask">
+		</div>
+	</div>
 	<main>
-	  <div class="card">
-		  <div class="profile">
-			  <div class="picture">
-				  <img src="#" alt="头像">
+	  <div class="usercard">
+		  <div class="profile clearfix">
+			  <div class="picture" style="float:left" >
+					<img src="./img/avatar.jpg" alt="头像">
 			  </div>
-			  <div class="text">				
-				  <span class="welcome">Hello</span>
+			  <div class="text" style="float:left">				
+				  <span class="welcome">Hello
+						<span class="triangle"></span>
+					</span>
 		    	  <h1>朱秀玲</h1>
 				  <p>前端开发工程师</p>
 				  <hr>

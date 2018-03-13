@@ -16,13 +16,17 @@ a{
     margin: 0;
     padding: 0;
 }
+
+
+
 .topNavBar{
-    padding: 20px 16px 20px 16px;
     position: fixed;
     width: 100%;
+    left:0;
+    top:0;
 }
 .topNavBar .topNavBar-inner{
-    margin-right: 32px;
+    margin: 20px 16px 20px 16px;
 }
 .topNavBar .logo{
     font-family: "Arial Black";
@@ -44,6 +48,7 @@ a{
 .topNavBar nav>ul{
     padding: 0;
     margin: 0;
+    
 }
 .topNavBar nav>ul>li{
     float: left;
@@ -64,6 +69,7 @@ a{
 .topNavBar nav>ul>li>a:hover{
     border-bottom: 3px solid #e06567;
 }
+
 .banner{
     background-image: url(./img/rs-cover.jpg);
     height: 515px;
@@ -81,9 +87,10 @@ a{
     max-width: 940px;
     margin-left: auto;
     margin-right: auto;
+}
+.usercard .profile{
     padding: 50px;
 }
-
 .usercard .picture{
     margin-right: 67px; 
 }

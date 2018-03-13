@@ -17,13 +17,12 @@ a{
     padding: 0;
 }
 
-
-
+/* 导航栏样式设置 */
 .topNavBar{
     position: fixed;
     width: 100%;
-    left:0;
-    top:0;
+    left: 0;
+    top: 0;
 }
 .topNavBar .topNavBar-inner{
     margin: 20px 16px 20px 16px;
@@ -48,7 +47,6 @@ a{
 .topNavBar nav>ul{
     padding: 0;
     margin: 0;
-    
 }
 .topNavBar nav>ul>li{
     float: left;
@@ -70,6 +68,7 @@ a{
     border-bottom: 3px solid #e06567;
 }
 
+/* 背景图样式 */
 .banner{
     background-image: url(./img/rs-cover.jpg);
     height: 515px;
@@ -81,6 +80,8 @@ a{
     height: 515px;
 }
 
+
+/*个人信息框样式*/
 .usercard{
     border: 1px solid green;
     background-color: rgb(255, 255, 255);
@@ -89,7 +90,7 @@ a{
     margin-right: auto;
 }
 .usercard .profile{
-    padding: 50px;
+    margin: 50px;
 }
 .usercard .picture{
     margin-right: 67px; 
@@ -98,8 +99,9 @@ a{
 .usercard .welcome{
     background-color: #e6686a;
     color: rgb(255, 255, 255);
-    padding: 4px 16px  4px 16px;
+    padding: 4px 16px;
     position: relative;
+    margin-bottom: 36px;
 }
 
 .usercard .triangle{
@@ -112,14 +114,28 @@ a{
     position: absolute;
     margin-left: 5px;
 }
-dl{
-    border:1px solid blue;
+.usercard .text{
+    width: 467px;
 }
-.usercard dt{
-    float: left;
-    width: 30%
+.usercard h1{
+    margin-top: 36px;
+    margin-bottom: 8px;
 }
-.usercard dl{
+.usercard hr{
+    margin: 25px 0;
+    height: 0;
+    border: none;
+    border-top: 1px solid #DEDEDE;
+}
+.usercard .profile dt{
     float: left;
-    width: 70%
+    width: 30%;
+    padding: 5px 0;
+    font-weight: bold;
+}
+.usercard .profile dd{
+    float: left;
+    width: 70%;
+    padding: 5px 0;
+    color: #9da0a7;
 }

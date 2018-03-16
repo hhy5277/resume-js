@@ -110,13 +110,13 @@ ol,li{
 
 .usercard .triangle{
     display: block;
-    width:0px;
-    height:0px;
-    border:8px solid  #e6686a;
-    border-right-color:transparent;
-    border-bottom-color:transparent;
+    border: 10px solid transparent;
+    width: 0px;
+    border-left-color: #e6686a;
+    border-top-width: 0px;
     position: absolute;
-    margin-left: 5px;
+    left: 4px;
+    top: 100%;
 }
 .usercard .text{
     width: 467px;

@@ -90,7 +90,7 @@
 			</p>
 		</div>
 	</main>
-	<section>
+	<section >
 		<div class="skill">
 			<h2 >技能</h2>
 			<ol class="clearfix">
@@ -135,12 +135,37 @@
 		<div class="prouduction">
 	 	  <h2>作品集</h2>
 		  <nav> 
-	   		<ol>
-		  		<li></li>
-		 	  	<li></li>
-		 	 	  <li></li>
-	   		</ol>
-		  </nav>
+	   		<ol class="clearfix">
+		  		<li id="prouduction1">所有</li>
+		 	  	<li id="prouduction2">框架</li>
+					<li id="prouduction3">原生JS&amp;CSS</li>
+				 </ol>
+				 <div id="bar" class="bar status-1">
+					<div class="bar-inner"></div>
+				 </div>		
+			</nav>
+			<script>
+				prouduction1.onclick= function(){
+					bar.className = 'bar status-1'
+				}
+				prouduction2.onclick= function(){
+					bar.className = 'bar status-2'
+				}
+				prouduction3.onclick= function(){
+					bar.className = 'bar status-3'
+				}
+			</script>
+			<div class="works " style="height: 597px;">
+				<div class="big" style="top: 0; left: 0;">
+					<img src="./img/1.jpg" alt="作品1">
+				</div>
+				<div class="small" style="top: 0; left: 645px;">
+					<img src="./img/2.jpg" alt="作品2">
+				</div>
+				<div class="small" style="top: 312px; left: 645px;">
+					<img src="./img/3.jpg" alt="作品3">
+				</div>
+			</div>
 		</div>
 	</section>
 </body>

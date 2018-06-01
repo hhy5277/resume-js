@@ -172,129 +172,13 @@
 	<script src="//at.alicdn.com/t/font_590080_eorv2doo1qvvx6r.js"></script>
 	<script src="./swiper.min.js"></script>
 
+	<script src="./JS/auto-slide-up.js"></script>
+	<script src="./JS/init-swiper.js"></script>
+	<script src="./JS/smoothly-navigation.js"></script>
+	<script src="./JS/sticky-topBar.js"></script>
+	<script src="./JS/submenu.js"></script>
 
-	<script>
-		//swiper
-	    var swiper = new Swiper('.swiper-container', {
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-        renderBullet: function (index, className) {
-          return '<span class="' + className + '">' + (index + 1) + '</span>';
-        },
-      },
-	  navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-    });
+
 	
-	console.log(swiper)
-	</script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	<script>
-		//topNavBar sticky +
-		window.onscroll = function (){
-			window.scrollY !== 0 ? $(navBar).addClass('sticky'):$(navBar).removeClass('sticky')
-		}
-
-		// highlight currentTarget
-		xx()
-		window.addEventListener('scroll',xx)
-		function xx(){
-			let specialTags = $('[data-x]')
-			let minIndex = 0
-			specialTags[minIndex].classList.remove('offset')	
-			for(let i=1; i < specialTags.length; i++){
-				if(Math.abs(specialTags[i].offsetTop - window.scrollY) < Math.abs(specialTags[minIndex].offsetTop-window.scrollY))
-				{
-					minIndex = i
-				}
-				let id = specialTags[minIndex].id
-				let highlightTag = document.querySelector('a[href="#' + id +'"]' )
-				for(let i = 0;i<specialTags.length;i++){
-					let highlightTags = document.querySelector('a[href="#' +specialTags[i].id+'"]')
-					highlightTags.parentElement.classList.remove('highlight')
-					specialTags[i].classList.add('offset')
-				}
-				highlightTag.parentElement.classList.add('highlight')
-				specialTags[minIndex].classList.remove('offset')			
-			}
-		}
-	
-		//submenuSetting
-		let liTags = document.querySelectorAll(' nav.menu > ul > li')
-		for(let i = 0;i<liTags.length;i++){
-			liTags[i].onmouseenter = function(x){
-				let targetMenu = x.currentTarget
-				targetMenu.classList.add('active')
-			}
-			liTags[i].onmouseleave = function(x){
-				let targetMenu = x.currentTarget
-				targetMenu.classList.remove('active')
-			}
-		}
-
-		//smooth-Slide-up
-		let aTags = document.querySelectorAll('nav.menu > ul > li > a')
-		function animate(time) {
-				requestAnimationFrame(animate);
-				TWEEN.update(time);
-		}	
-		requestAnimationFrame(animate);
-
-		for(let i=0;i<aTags.length;i++){
-			aTags[i].onclick = function(x){
-				//settingSlideTime
-				let a = x.currentTarget
-				let href = a.getAttribute('href')
-				let selectElement = document.querySelector(href)
-				let currentTop = {y: window.scrollY}
-				let targetTop = { y:(selectElement.offsetTop-80)}
-				t = (Math.abs(targetTop.y - currentTop.y)/100)*300
-				if(t>500){t=500}
-				//TWEEN
-				let tween = new TWEEN.Tween(currentTop) 
-					.to({ y: targetTop.y },t) 
-					.easing(TWEEN.Easing.Quadratic.InOut)
-					.onUpdate(
-						function() { 
-							window.scrollTo(0,currentTop.y)
-						})	
-					.start(); 
-			}
-		}
-		
-
-		prouduction1.onclick= function(){
-			bar.className = 'bar status-1'
-		}
-		prouduction2.onclick= function(){
-			bar.className = 'bar status-2'
-		}
-		prouduction3.onclick= function(){
-			bar.className = 'bar status-3'
-		}
-	</script>
 </body>
 </html>

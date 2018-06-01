@@ -5,31 +5,10 @@
   	<meta name="viewport" content="width=device-width, initial-scale=1.0">
   	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>朱秀玲的个人简历</title>
-	<style>
-		.site-welcome{background-color: #999;display: none;position: fixed;top:0 ;left:0; width: 100%; height: 100%;justify-content:center;align-items:center;
-		}
-		.site-welcome.active{display:flex;z-index: 2;transition: all 1s}
-
-		.loading{position: relative;height: 100px;width: 100px;}
-		.loading::before,.loading::after{
-			content:'';position: absolute;top:0;left: 0;bottom: 0;right: 0;margin:auto;width: 0px; height: 0px;border-radius:50%;
-			background-color: #000;animation:circleLoading 1.5s linear infinite;}
-		.loading::before{animation-delay:0.75s}
-
-		@keyframes circleLoading{
-			0%{height:0;width:0;opacity:1;}
-			100%{height:100px;width:100px;opacity:0}
-		}
-		 
-	</style>
 	<link rel="stylesheet" href="./main.css">
-	<script src="//at.alicdn.com/t/font_590080_eorv2doo1qvvx6r.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.2.0/Tween.min.js"></script>
+
 </head>
 <body>
-	<div id="siteWelcome"class="site-welcome active">
-		<div class="loading"></div>
-	</div>
     <div id="navBar" class="topNavBar ">
 			<div class="topNavBar-inner clearfix" >
 			  <a class="logo" href="#" alt="logo" style="float:left">
@@ -50,14 +29,12 @@
 				<li >
 					<a href="#blog">博客</a>
 					<ul class="submenu">
-						<li><a href="#">博客1</a></li>
-						<li><a href="#">博客2</a></li>
-						<li><a href="#">博客3</a></li>
+						<li><a href="https://lynchuh.github.io/" target="about_blank">博客</a></li>
+						<li><a href="https://www.jianshu.com/u/d91f0168ded0" target="about_blank">简书</a></li>
+						<li><a href="https://www.zhihu.com/people/zhang-de-mei-28-16/activities">知乎</a></li>
 					</ul>
 				</li>
-		        <li><a href="#calendar">日历</a></li>	
-		        <li><a href="#connection">联系方式</a></li>
-		        <li><a href="#others">其他</a></li>
+
 		      </ul>
 		    </nav>
 		  </div>
@@ -67,7 +44,7 @@
 		</div>
 	</div>
 	<main>
-	  <div data-x id = "siteAbout" class="usercard ">
+	  <div data-x id = "siteAbout" class="usercard offset">
 		  <div class="profile clearfix">
 			  <div class="picture" style="float:left" >
 					<img src="./img/avatar.jpg" alt="头像">
@@ -126,7 +103,7 @@
 		</div>
 	</main>
 	<section >
-		<div data-x id = "siteSkills" class="skill">
+		<div data-x id = "siteSkills" class="skill offset">
 			<h2 >技能</h2>
 			<ol class="clearfix">
 		  	<li>
@@ -167,7 +144,7 @@
 				</li>
 			</ol>
 		</div>
-		<div data-x id = "siteProductions" class="prouduction">
+		<div data-x id = "siteProductions" class="prouduction offset">
 	 	  <h2>作品集</h2>
 		  <nav> 
 	   		<ol class="clearfix">
@@ -179,17 +156,6 @@
 					<div class="bar-inner"></div>
 				 </div>		
 			</nav>
-			<script>
-				prouduction1.onclick= function(){
-					bar.className = 'bar status-1'
-				}
-				prouduction2.onclick= function(){
-					bar.className = 'bar status-2'
-				}
-				prouduction3.onclick= function(){
-					bar.className = 'bar status-3'
-				}
-			</script>
 			<div class="works " style="height: 597px;">
 				<div class="big" style="top: 0; left: 0;">
 					<img src="./img/1.jpg" alt="作品1">
@@ -203,21 +169,26 @@
 			</div>
 		</div>
 	</section>
+	<script src="./jquery-3.3.1.min.js"></script>
+	<script src="./Tween.js"></script>
+	<script src="//at.alicdn.com/t/font_590080_eorv2doo1qvvx6r.js"></script>
+
+
+
 	<script>
-		// loading延时
-		setTimeout(function(){
-			siteWelcome.classList.remove('active')
-		},1000)
 
-		//topNavBar sticky + highlight currentTarget
+		//topNavBar sticky +
 		window.onscroll = function (){
-			//topNavBar sticky 
-			window.scrollY !== 0 ? navBar.classList.add('sticky'):navBar.classList.remove('sticky')
-			//highlight currentTarget
-			let specialTags = document.querySelectorAll('[data-x]')
-			// console.log(specialTags)
+			window.scrollY !== 0 ? $(navBar).addClass('sticky'):$(navBar).removeClass('sticky')
+		}
 
+		// highlight currentTarget
+		xx()
+		window.addEventListener('scroll',xx)
+		function xx(){
+			let specialTags = $('[data-x]')
 			let minIndex = 0
+			specialTags[minIndex].classList.remove('offset')	
 			for(let i=1; i < specialTags.length; i++){
 				if(Math.abs(specialTags[i].offsetTop - window.scrollY) < Math.abs(specialTags[minIndex].offsetTop-window.scrollY))
 				{
@@ -226,20 +197,17 @@
 				let id = specialTags[minIndex].id
 				let highlightTag = document.querySelector('a[href="#' + id +'"]' )
 				for(let i = 0;i<specialTags.length;i++){
-					let ids = specialTags[i].id
-					let highlightTags = document.querySelector('a[href="#' + ids +'"]')
+					let highlightTags = document.querySelector('a[href="#' +specialTags[i].id+'"]')
 					highlightTags.parentElement.classList.remove('highlight')
+					specialTags[i].classList.add('offset')
 				}
 				highlightTag.parentElement.classList.add('highlight')
-				
+				specialTags[minIndex].classList.remove('offset')			
 			}
-
-
 		}
-
+	
 		//submenuSetting
 		let liTags = document.querySelectorAll(' nav.menu > ul > li')
-		// console.log(liTags)
 		for(let i = 0;i<liTags.length;i++){
 			liTags[i].onmouseenter = function(x){
 				let targetMenu = x.currentTarget
@@ -251,7 +219,7 @@
 			}
 		}
 
-		//menuJump+ smoothSlide
+		//smooth-Slide-up
 		let aTags = document.querySelectorAll('nav.menu > ul > li > a')
 		function animate(time) {
 				requestAnimationFrame(animate);
@@ -276,14 +244,21 @@
 					.onUpdate(
 						function() { 
 							window.scrollTo(0,currentTop.y)
-				})	
-				.start(); 
+						})	
+					.start(); 
 			}
 		}
 		
-		//
 
-
+		prouduction1.onclick= function(){
+			bar.className = 'bar status-1'
+		}
+		prouduction2.onclick= function(){
+			bar.className = 'bar status-2'
+		}
+		prouduction3.onclick= function(){
+			bar.className = 'bar status-3'
+		}
 
 
 	</script>

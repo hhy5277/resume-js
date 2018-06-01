@@ -13,13 +13,14 @@ ol,li{list-style-type: none;margin: 0;border: 0;padding: 0;}
 .topNavBar .logo{font-family: "Arial Black";font-weight: bold;font-size: 24px;padding-top: 3px ;padding-bottom: 4px ;}
 .topNavBar .logo .rs{color: #e6686a;margin-right: 4px;}
 .topNavBar .logo .card{color:#9a9da2;}
+
 .topNavBar nav{padding-top: 7px;}
 .topNavBar nav>ul{padding: 0;margin: 0;}
 .topNavBar nav>ul>li{float: left;display: block;margin-left: 17px;margin-right: 17px;position: relative;}
 .topNavBar nav>ul>li.active::after,
-.topNavBar nav>ul>li.highlight::after
-{content: '';display: block;position: absolute;top:100%;height: 3px;background-color: #e06567;width: 100%; height: 3px;background-color: #e06567;animation: navslide 0.5s ;}
+.topNavBar nav>ul>li.highlight::after{content: '';display: block;position: absolute;top:100%;height: 3px;background-color: #e06567;width: 100%; height: 3px;background-color: #e06567;animation: navslide 0.5s ;}
 .topNavBar nav>ul>li>a{display: block;font-size: 12px;font-weight: bold;border-top: 3px solid transparent;border-bottom: 3px solid transparent;padding-bottom: 5px;padding-top: 5px;}
+
 .topNavBar nav li.active .submenu{display: block; animation: submenuslide 0.5s;}
 .topNavBar.sticky .submenu{box-shadow: 0 0 10px rgba(0, 0, 0,0.25);}
 .topNavBar nav .submenu{display: none;position: absolute;top:100%;white-space: nowrap; color:#3d4451; background-color: #fff;box-shadow: 0 0 10px rgba(225, 225, 225,0.45);border-radius: 2px;}
@@ -27,7 +28,6 @@ ol,li{list-style-type: none;margin: 0;border: 0;padding: 0;}
 .topNavBar nav .submenu li:first-child{padding-top: 16px}
 .topNavBar nav .submenu li:last-child{padding-bottom:16px}
 
-/* box-shadow: 0 0 51px 5px rgba(250, 242, 250, 0.40) */
 @keyframes navslide {
     0%{width: 0;}
     100%{width: 100%}
@@ -80,9 +80,11 @@ section h2{color: #3d4451;font-size: 34px;line-height: 1.2;font-weight: 600;}
 .skill > ol > li:nth-child(even) {float: right;}
 
 .skill h3{font-size: 14px;line-height: 1.1;padding-right: 40px;font-weight: 500;}
-.skill .processBar{background: #FAE1E1;border-radius: 3px;}
-.skill .processBar .process{background: #E6686A;height: 5px;border-radius: 3px;margin-top: 4px;margin-bottom: 40px;}
-
+.skill .processBar{background: #FAE1E1;border-radius: 3px; height: 5px;border-radius: 3px;margin-top: 4px;margin-bottom: 40px;
+    overflow: hidden;
+}
+.skill .processBar .process{background: #E6686A;height: 5px;border-radius: 3px;transform: translateX(0);transition: all 1s;}
+.skill.offset .processBar .process{transform: translateX(-100%)}
 /*作品*/
 section .prouduction{margin-top: 60px;margin-bottom: 100px;text-align: center;margin-left: auto;margin-right: auto;max-width: 940px;}
 section .prouduction nav{display: inline-block;margin-top: 32px;}
@@ -100,4 +102,15 @@ section .prouduction .works{position: relative;}
 section .prouduction .big,section .prouduction .small{position: absolute;}
 
 
-/* 补充js动画效果 */
+/**js动画效果*/
+[data-x].offset{
+    transform: translateY(30px);
+    
+}
+[data-x]{
+    transform: translateY(0);
+    transition: all 1s;
+    
+}
+
+/**swiper**/

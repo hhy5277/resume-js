@@ -6,7 +6,7 @@
   	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>朱秀玲的个人简历</title>
 	<link rel="stylesheet" href="./main.css">
-
+	<link rel="stylesheet" href="./swiper.min.css">
 </head>
 <body>
     <div id="navBar" class="topNavBar ">
@@ -146,37 +146,73 @@
 		</div>
 		<div data-x id = "siteProductions" class="prouduction offset">
 	 	  <h2>作品集</h2>
-		  <nav> 
-	   		<ol class="clearfix">
-		  		<li id="prouduction1">所有</li>
-		 	  	<li id="prouduction2">框架</li>
-					<li id="prouduction3">原生JS&amp;CSS</li>
-				 </ol>
-				 <div id="bar" class="bar status-1">
-					<div class="bar-inner"></div>
-				 </div>		
-			</nav>
-			<div class="works " style="height: 597px;">
-				<div class="big" style="top: 0; left: 0;">
-					<img src="./img/1.jpg" alt="作品1">
+	
+			  <!-- Swiper -->
+			<div class="swiper-container">
+				<div class="swiper-wrapper">
+				<div class="swiper-slide">
+					<img src="./img/canvas.jpg" alt="canvas-demo" >
 				</div>
-				<div class="small" style="top: 0; left: 645px;">
-					<img src="./img/2.jpg" alt="作品2">
+				<div class="swiper-slide">
+					<img src="./img/nav-page.jpg" alt="nav-page-demo">
 				</div>
-				<div class="small" style="top: 312px; left: 645px;">
-					<img src="./img/3.jpg" alt="作品3">
+				<div class="swiper-slide">
+					<img src="./img/slide-demo.png" alt="slide-demo">
 				</div>
+				</div>
+				<!-- Add Pagination -->
+				<div class="swiper-pagination"></div>
+				<div class="swiper-button-prev"></div>
+				<div class="swiper-button-next"></div>
 			</div>
 		</div>
 	</section>
 	<script src="./jquery-3.3.1.min.js"></script>
 	<script src="./Tween.js"></script>
 	<script src="//at.alicdn.com/t/font_590080_eorv2doo1qvvx6r.js"></script>
+	<script src="./swiper.min.js"></script>
+
+
+	<script>
+		//swiper
+	    var swiper = new Swiper('.swiper-container', {
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+        renderBullet: function (index, className) {
+          return '<span class="' + className + '">' + (index + 1) + '</span>';
+        },
+      },
+	  navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    });
+	
+	console.log(swiper)
+	</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 	<script>
-
 		//topNavBar sticky +
 		window.onscroll = function (){
 			window.scrollY !== 0 ? $(navBar).addClass('sticky'):$(navBar).removeClass('sticky')
@@ -259,8 +295,6 @@
 		prouduction3.onclick= function(){
 			bar.className = 'bar status-3'
 		}
-
-
 	</script>
 </body>
 </html>

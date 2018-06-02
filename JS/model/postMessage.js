@@ -1,69 +1,68 @@
-var APP_ID = 'tUYToXEYLQGuwyqQmfjYiDTA-gzGzoHsz';
-var APP_KEY = '4CjXAIao7GJAnxDJsp1Ssm58';
-// 初始化AV
-AV.init({
-  appId: APP_ID,
-  appKey: APP_KEY
-});
-
-postMessageForm.addEventListener('submit',function(e){
-    e.preventDefault()
-    var content = document.querySelector('input[name=content]').value
-    // console.dir(content)
-    var name = document.querySelector('input[name=name]').value
-    // console.log(name)
-    
-    // 存入数据
-    var Messages = AV.Object.extend('Messages');
-    var messages = new Messages();
-    messages.save({
-        name: name,
-        content: content   
-    }).then((object)=>{
-        console.log(object)
-        let li=document.createElement('li')
-        if(object.attributes.name !==''&& object.attributes.content!==''){
-            li.innerText= `${object.attributes.name}：${object.attributes.content}`
-            // console.log(li.innerText)
-            let messageList = document.querySelector('#messageList')
-            messageList.appendChild(li)
-        }else if(object.attributes.name === ''&&object.attributes.content !==''){
-            li.innerText= `匿名用户：${object.attributes.content}`
-            // console.log(li.innerText)
-            let messageList = document.querySelector('#messageList')
-            messageList.appendChild(li)
+!function(){
+    var view=document.querySelector('section#message')
+    var model={
+        init:function(){
+            var APP_ID = 'tUYToXEYLQGuwyqQmfjYiDTA-gzGzoHsz'
+            var APP_KEY = '4CjXAIao7GJAnxDJsp1Ssm58'
+            AV.init({appId: APP_ID,appKey: APP_KEY})
+        },
+        fetch:function(){
+            var query = new AV.Query('Messages');
+            return query.find()
+        },
+        save:function(name,content){
+            var Messages = AV.Object.extend('Messages');
+            var messages = new Messages();
+           return messages.save({
+                name: name,
+                content: content   
+            })
         }
-        document.querySelector('input[name=content]').value = ''
+    }
 
-    })
-})
+    var controller={
+        view:null,
+        model:null,
+        messageList:null,
+        form:null,
+        appendMessages:function(messages){
+            messages.forEach((items)=>{
+                let li=document.createElement('li')
+                if(items.attributes.name !==''&& items.attributes.content!==''){
+                    li.innerText= `${items.attributes.name}：${items.attributes.content}`
+                    this.messageList.appendChild(li)
+                }else if(items.attributes.name === ''&&items.attributes.content !==''){
+                    li.innerText= `匿名用户：${items.attributes.content}`
+                    this.messageList.appendChild(li)
+                }
+            })
+        },
+        saveMessages:function(Messages){
+            let myForm = this.form
+            let content = myForm.querySelector('input[name=content]').value
+            let name = myForm.querySelector('input[name=name]').value
+            this.model.save(name, content).then(this.appendMessages)
+        },
+        loadMessages:function(){
+            this.model.fetch().then(this.appendMessages)
+        },
+        bindEvents:function(){
+            this.form.addEventListener('submit',(e)=>{
+                e.preventDefault()
+                this.saveMessages()
+                
+        })
+        },
 
-
-//获取数据到页面
-
-var query = new AV.Query('Messages');
-query.find().then(function (messages) {
-    // console.log(messages)
-    let array = messages.map((items)=>{return items.attributes})
-    console.log(array)
-    array.forEach((items)=>{
-        let li=document.createElement('li')
-        if(items.name !==''&& items.content!==''){
-            li.innerText= `${items.name}：${items.content}`
-            // console.log(li.innerText)
-            let messageList = document.querySelector('#messageList')
-            messageList.appendChild(li)
-        }else if(items.name === ''&&items.content !==''){
-            li.innerText= `匿名用户：${items.content}`
-            // console.log(li.innerText)
-            let messageList = document.querySelector('#messageList')
-            messageList.appendChild(li)
-        }
-    })
-
-
-}).then(function(messages) {
-// 更新成功
-}, function (error) {
-// 异常处理
-})
+        init:function(view,model){
+            this.view=view
+            this.model = model
+            this.model.init()
+            this.form = view.querySelector('form')
+            this.messageList = document.querySelector('#messageList')
+            this.loadMessages()
+            this.bindEvents()
+        },
+    }
+    controller.init(view,model)
+}.call()

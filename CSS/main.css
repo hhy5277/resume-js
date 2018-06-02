@@ -118,6 +118,31 @@ section >.messageWrapper > ol#messageList >li:last-child{
     border-bottom: 0px;
     margin-bottom: 20px;
 }
+
+section > .messageWrapper > form  input.text{
+    border: 1px solid #DDD ;
+    box-shadow: 0px 0px 1px 1px rgba(61,68,81,0.14);
+    height: 25px;
+    width: 200px;
+}
+section > .messageWrapper > form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+section > .messageWrapper > form > .contentText{
+    margin: 8px;
+}
+section > .messageWrapper > form >.submit{
+    border: 1px solid #DDD ;
+    height: 30px;
+    width: 50px;
+    background-color: #E6686A;
+    border-radius: 6px;
+    box-shadow: 0px 0px 4px 1px rgba(61,68,81,0.14);
+    color: white;
+}
+
 /**js动画效果*/
 [data-x].offset{transform: translateY(15px);}
 [data-x]{transform: translateY(0);transition: all 1s;}

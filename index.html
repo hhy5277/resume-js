@@ -169,27 +169,27 @@
 	<section data-x class="message" id="message">
 		<h2>留言</h2>
 		<div class="messageWrapper">
-
 			<ol id="messageList">
 				
 			</ol>
 			<form id="postMessageForm">
-				<label for="">姓名</label>
-				<input type="text" name="name">
-				<label for="">留言</label>
-				<input type="text" name="content">
-				<input type="submit" value="提交">
+				<div class="contentText">
+					<label for="name">姓名：</label>
+					<input type="text" name="name" class ="text">
+				</div>
+				<div class="contentText">
+					<label for="content">留言：</label>
+					<input type="text" name="content" class= "text"> 
+				</div>
+				<input type="submit" value="提交" class="submit">
 			</form>
 		</div>
 	</section>
 	<script src="./JS/swiper.min.js"></script>
 	<script src="//at.alicdn.com/t/font_590080_eorv2doo1qvvx6r.js"></script>
 	<script src="./JS/Tween.js"></script>
-
-	<!-- 存储服务 -->
 	<script src="//cdn.jsdelivr.net/npm/leancloud-storage@3.7.0/dist/av-min.js"></script>
-	<!-- 实时消息服务 -->
-	<script src="//cdn.jsdelivr.net/npm/leancloud-realtime@4.0.0/dist/realtime.browser.min.js"></script>
+
 
 
 	<script src="./JS/model/auto-slide-up.js"></script>

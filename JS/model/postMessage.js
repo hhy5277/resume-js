@@ -20,11 +20,19 @@ postMessageForm.addEventListener('submit',function(e){
         name: name,
         content: content   
     }).then((object)=>{
+        console.log(object)
         let li=document.createElement('li')
-        li.innerText= `${object.attributes.name}：${object.attributes.content}`
-        console.log(li.innerText)
-        let messageList = document.querySelector('#messageList')
-        messageList.appendChild(li)
+        if(object.attributes.name !==''&& object.attributes.content!==''){
+            li.innerText= `${object.attributes.name}：${object.attributes.content}`
+            // console.log(li.innerText)
+            let messageList = document.querySelector('#messageList')
+            messageList.appendChild(li)
+        }else if(object.attributes.name === ''&&object.attributes.content !==''){
+            li.innerText= `匿名用户：${object.attributes.content}`
+            // console.log(li.innerText)
+            let messageList = document.querySelector('#messageList')
+            messageList.appendChild(li)
+        }
         document.querySelector('input[name=content]').value = ''
 
     })
@@ -40,10 +48,17 @@ query.find().then(function (messages) {
     console.log(array)
     array.forEach((items)=>{
         let li=document.createElement('li')
-        li.innerText= `${items.name}：${items.content}`
-        // console.log(li.innerText)
-        let messageList = document.querySelector('#messageList')
-        messageList.appendChild(li)
+        if(items.name !==''&& items.content!==''){
+            li.innerText= `${items.name}：${items.content}`
+            // console.log(li.innerText)
+            let messageList = document.querySelector('#messageList')
+            messageList.appendChild(li)
+        }else if(items.name === ''&&items.content !==''){
+            li.innerText= `匿名用户：${items.content}`
+            // console.log(li.innerText)
+            let messageList = document.querySelector('#messageList')
+            messageList.appendChild(li)
+        }
     })
 
 

@@ -27,6 +27,7 @@
 						<li><a href="https://lynchuh.github.io/autoSlide-demo3/index.html" target="about_blank">轮播demo</a></li>
 					</ul>
 				</li>
+				<li><a href="#message">留言</a></li>
 				<li >
 					<a href="#blog">博客</a>
 					<ul class="submenu">
@@ -35,6 +36,7 @@
 						<li><a href="https://www.zhihu.com/people/zhang-de-mei-28-16/activities">知乎</a></li>
 					</ul>
 				</li>
+
 
 		      </ul>
 		    </nav>
@@ -70,7 +72,7 @@
 			  </div>
 		  </div>
 			<footer class="media">
-				<a href="#">
+				<a href="https://lynchuh.github.io/" target="about_blank">
 					<svg class="icon" aria-hidden="true">
 						<use xlink:href="#icon-hexo"></use>
 					</svg>
@@ -80,16 +82,12 @@
 						<use xlink:href="#icon-weibo"></use>
 					</svg>
 			  </a>
-			  <a href="#">
+			  <a href="https://github.com/lynchuh" target="about_blank">
 					<svg class="icon" aria-hidden="true">
 						<use xlink:href="#icon-github"></use>
 					</svg>
 			  </a>
-			  <a href="#">
-					<svg class="icon" aria-hidden="true">
-						<use xlink:href="#icon-tuitetwitter44"></use>
-					</svg>
-			  </a>
+
 			</footer>	
 	  </div>
 		<div class="resumeDownload-wrapper" >
@@ -168,11 +166,30 @@
 			<div class="swiper-button-next"></div>
 		</div>
 	</section>
+	<section data-x class="message" id="message">
+		<h2>留言</h2>
+		<div class="messageWrapper">
 
+			<ol id="messageList">
+				
+			</ol>
+			<form id="postMessageForm">
+				<label for="">姓名</label>
+				<input type="text" name="name">
+				<label for="">留言</label>
+				<input type="text" name="content">
+				<input type="submit" value="提交">
+			</form>
+		</div>
+	</section>
 	<script src="./JS/swiper.min.js"></script>
 	<script src="//at.alicdn.com/t/font_590080_eorv2doo1qvvx6r.js"></script>
 	<script src="./JS/Tween.js"></script>
 
+	<!-- 存储服务 -->
+	<script src="//cdn.jsdelivr.net/npm/leancloud-storage@3.7.0/dist/av-min.js"></script>
+	<!-- 实时消息服务 -->
+	<script src="//cdn.jsdelivr.net/npm/leancloud-realtime@4.0.0/dist/realtime.browser.min.js"></script>
 
 
 	<script src="./JS/model/auto-slide-up.js"></script>
@@ -180,5 +197,6 @@
 	<script src="./JS/model/smoothly-navigation.js"></script>
 	<script src="./JS/model/sticky-topBar.js"></script>
 	<script src="./JS/model/submenu.js"></script>
+	<script src="./JS/model/postMessage.js"></script>
 </body>
 </html>

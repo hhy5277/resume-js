@@ -5,8 +5,8 @@
   	<meta name="viewport" content="width=device-width, initial-scale=1.0">
   	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>朱秀玲的个人简历</title>
-	<link rel="stylesheet" href="./main.css">
-	<link rel="stylesheet" href="./swiper.min.css">
+	<link rel="stylesheet" href="./CSS/main.css">
+	<link rel="stylesheet" href="./CSS/swiper.min.css">
 </head>
 <body>
     <div id="navBar" class="topNavBar ">
@@ -21,9 +21,10 @@
 				<li>
 					<a href="#siteProductions">作品</a>
 					<ul class="submenu">
-						<li><a href="#">作品1</a></li>
-						<li><a href="#">作品2</a></li>
-						<li><a href="#">作品3</a></li>
+						<li><a href="https://lynchuh.github.io/cartoonMaking-demo/index.html" target="about_blank">css实现卡通人物</a></li>
+						<li><a href="https://lynchuh.github.io/myBookmarks/" target="about_blank">导航demo</a></li>
+						<li><a href="https://lynchuh.github.io/canvas-demo/index.html" target="about_blank">画板demo</a></li>
+						<li><a href="https://lynchuh.github.io/autoSlide-demo3/index.html" target="about_blank">轮播demo</a></li>
 					</ul>
 				</li>
 				<li >
@@ -146,39 +147,38 @@
 		</div>
 		<div data-x id = "siteProductions" class="prouduction offset">
 	 	  <h2>作品集</h2>
-	
 			  <!-- Swiper -->
-			<div class="swiper-container">
-				<div class="swiper-wrapper">
-				<div class="swiper-slide">
-					<img src="./img/canvas.jpg" alt="canvas-demo" >
+			<div id="slide">
+				<div class="swiper-container">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide">
+							<img src="./img/works/canvas.jpg" alt="canvas-demo" >
+						</div>
+						<div class="swiper-slide">
+							<img src="./img/works/nav-page.jpg" alt="nav-page-demo">
+						</div>
+						<div class="swiper-slide">
+							<img src="./img/works/slide-demo.png" alt="slide-demo">
+						</div>
+					</div>
 				</div>
-				<div class="swiper-slide">
-					<img src="./img/nav-page.jpg" alt="nav-page-demo">
-				</div>
-				<div class="swiper-slide">
-					<img src="./img/slide-demo.png" alt="slide-demo">
-				</div>
-				</div>
-				<!-- Add Pagination -->
-				<div class="swiper-pagination"></div>
-				<div class="swiper-button-prev"></div>
-				<div class="swiper-button-next"></div>
 			</div>
+
+			<div class="swiper-button-prev"></div>
+			<div class="swiper-button-next"></div>
 		</div>
 	</section>
-	<script src="./jquery-3.3.1.min.js"></script>
-	<script src="./Tween.js"></script>
+
+	<script src="./JS/swiper.min.js"></script>
 	<script src="//at.alicdn.com/t/font_590080_eorv2doo1qvvx6r.js"></script>
-	<script src="./swiper.min.js"></script>
-
-	<script src="./JS/auto-slide-up.js"></script>
-	<script src="./JS/init-swiper.js"></script>
-	<script src="./JS/smoothly-navigation.js"></script>
-	<script src="./JS/sticky-topBar.js"></script>
-	<script src="./JS/submenu.js"></script>
+	<script src="./JS/Tween.js"></script>
 
 
-	
+
+	<script src="./JS/model/auto-slide-up.js"></script>
+	<script src="./JS/model/init-swiper.js"></script>
+	<script src="./JS/model/smoothly-navigation.js"></script>
+	<script src="./JS/model/sticky-topBar.js"></script>
+	<script src="./JS/model/submenu.js"></script>
 </body>
 </html>

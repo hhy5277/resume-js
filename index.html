@@ -4,17 +4,17 @@
  	 <meta charset="UTF-8">
   	<meta name="viewport" content="width=device-width, initial-scale=1.0">
   	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>朱秀玲的个人简历</title>
+	<title>Lyn 个人简历</title>
 	<link rel="stylesheet" href="./CSS/main.css">
 	<link rel="stylesheet" href="./CSS/swiper.min.css">
 </head>
 <body>
     <div id="navBar" class="topNavBar ">
-			<div class="topNavBar-inner clearfix" >
-			  <a class="logo" href="#" alt="logo" style="float:left">
-				<span class="rs">RS</span><span class="card">card</span>
-			  </a>
-	    	<nav class= "menu" style="float:right">
+			<div class="topNavBar-inner" >
+			  <div class="logo"  >
+				<span class="rs">L</span><span class="card">yn</span>
+			</div>
+	    	<nav class= "menu" >
 			    <ul class=" clearfix">
 		        <li><a href="#siteAbout">关于</a></li>
 		        <li><a href="#siteSkills">技能</a></li>
@@ -46,129 +46,226 @@
 		<div class="mask">
 		</div>
 	</div>
-	<main>
-	  <div data-x id = "siteAbout" class="usercard offset">
+	<main class="card">
+	  <wired-card elevation="5" data-x id = "siteAbout" class="usercard offset">
 		  <div class="profile clearfix">
 			  <div class="picture" style="float:left" >
 					<img src="./img/avatar.jpg" alt="头像">
 			  </div>
 			  <div class="text" style="float:left">				
-				  <span class="welcome">Hello
-						<span class="triangle"></span>
-					</span>
-		    	  <h1>朱秀玲</h1>
-				  <p>前端开发工程师</p>
+				  <h1>朱秀玲</h1>
+				  <p>一个踏入社会快满一年的大龄毕业生，在开始工作的第二个月，发现自己对前端产生了兴趣，却苦于没有一身技术。于是开始了半年的边做文案策划边学习前端的日子
+					</p>
 				  <hr>
-			  	  <dl class="clearfix">
-					  <dt>年龄</dt>
-					  <dd>25</dd>
-					  <dt>所在城市</dt>
-					  <dd>广东</dd>
-					  <dt>邮箱</dt>
-					  <dd>lynchuh@gmail.com</dd>
-					  <dt>手机</dt>
-					  <dd>15918268174</dd>	
-					</dl>
-			  </div>
-		  </div>
-			<footer class="media">
-				<a href="https://lynchuh.github.io/" target="about_blank">
-					<svg class="icon" aria-hidden="true">
-						<use xlink:href="#icon-hexo"></use>
-					</svg>
-			 	</a>
-			  <a href="#">
-					<svg class="icon" aria-hidden="true">
-						<use xlink:href="#icon-weibo"></use>
-					</svg>
-			  </a>
-			  <a href="https://github.com/lynchuh" target="about_blank">
-					<svg class="icon" aria-hidden="true">
-						<use xlink:href="#icon-github"></use>
-					</svg>
-			  </a>
+				  <div class="information">
+						<dl class="clearfix">
+							<dt>年龄</dt>
+							<dd>25</dd>
+							<dt>所在城市</dt>
+							<dd>广东珠三角</dd>
+							<dt>学历</dt>
+							<dd>本科 / 电子科学与技术</dd>
+							<dt>工作年限</dt>
+							<dd>1年</dd>
+							<dt>QQ/Wechat</dt>	
+							<dd>632955934</dd>
+							<dt>Github</dt>
+							<dd> <a href="https://github.com/lynchuh" target="_blank">https://github.com/lynchuh</a> </dd>
+						</dl>
 
-			</footer>	
-	  </div>
-		<div class="resumeDownload-wrapper" >
-			<p class="resumeDownload"><a href="./resume.pdf" target="_blank" download="朱秀玲_前端开发工程师_简历">下载 PDF 简历</a>
-			</p>
+				  </div>
+			  </div>
+			  <div class="resumeDownload-wrapper">
+					<wired-card class="resumeDownload-style" >
+						<p class="resumeDownload"><a href="./resume.pdf" target="_blank" download="朱秀玲_前端开发工程师_简历">下载 PDF 简历</a>
+						</p>
+				  </wired-card>
+			  </div>
 			</div>
-		<div >
-			<p class="introduction"> 
-			朱秀玲，前端开发工程师。自由职业者。<br>
-			技能：HTML+CSS JavaScript node.js 
-			</p>
-		</div>
+	  </wired-card>
 	</main>
 	<section >
 		<div data-x id = "siteSkills" class="skill offset">
-			<h2 >技能</h2>
-			<ol class="clearfix">
-		  	<li>
-					<h3>HTML 5 &amp; CSS 3</h3>
-					<div class="processBar">
-						<div class="process" style="width:60%"></div>
+			<wired-card elevation="1">
+				<h2 >技能</h2>
+			</wired-card>
+			<div class="skillWrapper">
+				<div class="skillItem">
+					<wired-listbox  class="listbox"selected="one">
+						<wired-item value="one" text="HTML 5 &amp; CSS 3"></wired-item>
+						<wired-item value="two" text="JavaScript &amp; jQuery"></wired-item>
+						<wired-item value="three" text="框架 &amp; 工具"></wired-item>
+						<!-- <wired-item value="four" text="Vue &amp; React"></wired-item> -->
+					</wired-listbox>
+				</div>
+				<wired-card elevation="3">
+					<div class="ContentsWrapper">
+						<div id="content1" class="skillContents active">
+							<div class="skillProgress">
+								<span>HTML 5 &amp; CSS 3</span>
+								<div class="wired-progress">
+									<wired-progress percentage value="88" ></wired-progress>
+								</div>
+							</div>
+							<div class="skillIntroduce">
+								<div class="introduce">
+									<span>熟悉常见布局、盒模型、Flex、响应式、移动端适配，<br></span>
+									<span>掌握CSS 3 动画、过渡效果、响应式等常用技术。<br></span>
+									<span>可快速根据设计稿开发页面，熟悉开发调试，<br></span>
+									<span>搭建符合 HTML5 语义化的页面结构。<br></span>
+									<a href="https://lynchuh.github.io/cartoonMaking-demo/index.html" target="_blank">Link: 点我即可拥有这只小猪佩奇</a>
+								</div>
+								<img src="./img/production1.jpg" alt=" CSS3 实现小猪佩奇">
+							</div>
+						</div>
+						<div id="content2" class="skillContents">
+							<div class="skillProgress">
+								<span>JavaScript &amp; jQuery</span>
+								<div class="wired-progress">
+									<wired-progress value="86" percentage></wired-progress>
+								</div>
+							</div>
+							<div class="skillIntroduce">
+								<div class="introduce">
+									<span>熟悉原生JS和jQuery，能脱离jQuery等类库编码，<br></span>
+									<span>掌握事件模型、DOM 操作、闭包、 原型链、面向对象、MVC等知识<br></span>
+									<span>熟悉AJAX、JSONP、跨域等,<br></span>
+									<span>了解ES6语法、继承、类、Promise等<br></span>
+									<a href="https://lynchuh.github.io/autoSlide-demo3/index.html" target="_blank" >Link:点我查看无缝轮播</a><br>
+									<a href="https://lynchuh.github.io/resume-demo2/index.html" target="_blank" >Link:点我查看一个会动的简历</a><br>
+									<a href="https://lynchuh.github.io/myBookmarks/" target="_blank" >Link:点我查看我的导航页面</a>
+								</div>
+								<img  class="pic" src="./img/production2.jpg" alt="原生JS实现无缝轮播" >
+							</div>
+						</div>
+						<div id="content3" class="skillContents">
+							<div class="skillProgress">
+								<span>框架 &amp; 工具</span>
+								<div class="wired-progress">
+									<wired-progress value="66" percentage></wired-progress>
+								</div>
+							</div>
+							<div class="skillIntroduce">
+								<div class="introduce">
+									<span>了解前端自动化工具Webpack，Parcel，<br></span>
+									<span>会使用Git进行版本管理、Linux命令行等开发工具。<br></span>
+									<span>了解 Vue、React 前端框架，可独立开发页面组件。<br></span>
+									<span>了解HTTP通信原理及Node.js、可独立搭建后端服务器<br></span>
+								</div>
+							<img  class="pic" src="./img/skill3.jpg" alt="我是占位哒" >
+							</div>
+							<div class="myLink"></div>
+						</div>
 					</div>
-				</li>
-		 	 <li>
-					<h3>JavaScript</h3>
-					<div class="processBar">
-						<div class="process" style="width:55%"></div>
-					</div>
-				</li>
-		 	 <li>
-					<h3>jQuery</h3>
-					<div class="processBar">
-						<div class="process" style="width:45%"></div>
-					</div>
-				</li>
-		  	<li>
-					<h3>Vue</h3>
-					<div class="processBar">
-						<div class="process" style="width:40%"></div>
-					</div>
-				</li>
-			  <li>
-					<h3>React</h3>
-					<div class="processBar">
-						<div class="process" style="width:40%"></div>
-					</div>
-				</li>
-			  <li>
-					<h3>HTTP</h3>
-					<div class="processBar">
-						<div class="process" style="width:50%"></div>
-					</div>
-				</li>
-			</ol>
+				</wired-card>
+			</div>
 		</div>
 		<div data-x id = "siteProductions" class="prouduction offset">
+		  <wired-card elevation="1">
 	 	  <h2>作品集</h2>
-			  <!-- Swiper -->
-			<div id="slide">
-				<div class="swiper-container">
-					<div class="swiper-wrapper">
-						<div class="swiper-slide">
-							<img src="./img/works/canvas.jpg" alt="canvas-demo" >
-						</div>
-						<div class="swiper-slide">
-							<img src="./img/works/nav-page.jpg" alt="nav-page-demo">
-						</div>
-						<div class="swiper-slide">
-							<img src="./img/works/slide-demo.png" alt="slide-demo">
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="swiper-button-prev"></div>
-			<div class="swiper-button-next"></div>
+		</wired-card>
+		<!-- <div > -->
+			<ol class="prouductions">
+				<li>
+					<wired-card elevation="1">
+						<div class="contentWrapper">
+							<img src="./img/works/canvas.jpg" alt="">
+							<div class="text">
+								<h3>小画板</h3>
+								<dl class="clearfix">
+									<dt>关键字</dt>
+									<dd>原生JavaScript、jQuery、响应式、 MVC、canvas</dd>
+									<dt>描述</dt>
+									<dd>使用原生JS及jQuery进行DOM操作与事件委托;<br>
+										并用MVC思想重构代码；使用canvasAPI 实现涂鸦功能；<br>
+										并使用meta进行移动端适配。项目实现涂鸦调色、橡皮擦、保存、一键删除等功能。</dd>
+									<dt>预览链接</dt>
+									<dd> <a href="https://lynchuh.github.io/canvas-demo/index.html"> https://lynchuh.github.io/canvas-demo/index.html</a></dd>
+									<dt>源码链接</dt>
+									<dd> <a href="https://github.com/lynchuh/canvas-demo"> https://github.com/lynchuh/canvas-demo</a></dd>
+								</dl>
+							</div>
+						</div>			
+					</wired-card>
+					
+				</li>
+				<li>
+					<wired-card elevation="1">
+						<div class="contentWrapper">
+							<img src="./img/works/nav-page.jpg" alt="">
+							<div class="text">
+								<h3>我de导航页</h3>
+								<dl class="clearfix">
+									<dt>关键字</dt>
+									<dd>jQuery</dd>
+									<dt>描述</dt>
+									<dd>jQuery进行DOM操作与事件委托;<br>
+										使用mark.js实现演示代码的高亮，prism.js实现markdown格式转换为html<br>
+										</dd>
+									<dt>预览链接</dt>
+									<dd> <a href="https://lynchuh.github.io/canvas-demo/index.html"> https://lynchuh.github.io/canvas-demo/index.html</a></dd>
+									<dt>源码链接</dt>
+									<dd> <a href="https://github.com/lynchuh/canvas-demo"> https://github.com/lynchuh/canvas-demo</a></dd>
+								</dl>
+							</div>
+						</div>	
+					</wired-card>
+				</li>
+				<li>
+					<wired-card elevation="1">
+						<div class="contentWrapper">
+							<img src="./img/works/Peppa-CSS3.jpg" alt="">
+							<div class="text">
+								<h3>CSS 3实现动画人物</h3>
+								<dl class="clearfix">
+									<dt>关键字</dt>
+									<dd>原生JavaScript、jQuery、响应式、 MVC、canvas</dd>
+									<dt>描述</dt>
+									<dd>使用原生JS及jQuery进行DOM操作与事件委托;<br>
+										并用MVC思想重构代码；使用canvasAPI 实现涂鸦功能；<br>
+										并使用meta进行移动端适配。项目实现涂鸦调色、橡皮擦、保存、一键删除等功能。</dd>
+									<dt>预览链接</dt>
+									<dd> <a href="https://lynchuh.github.io/canvas-demo/index.html"> https://lynchuh.github.io/canvas-demo/index.html</a></dd>
+									<dt>源码链接</dt>
+									<dd> <a href="https://github.com/lynchuh/canvas-demo"> https://github.com/lynchuh/canvas-demo</a></dd>
+								</dl>
+							</div>
+						</div>	
+					</wired-card>
+				</li>
+				<li>
+					<wired-card elevation="1">
+						<div class="contentWrapper">
+							<img src="./img/works/resume.jpg" alt="">
+							<div class="text">
+								<h3>一个会动的简历</h3>
+								<dl class="clearfix">
+									<dt>关键字</dt>
+									<dd>原生JavaScript、jQuery、响应式、 MVC、canvas</dd>
+									<dt>描述</dt>
+									<dd>使用原生JS及jQuery进行DOM操作与事件委托;<br>
+										并用MVC思想重构代码；使用canvasAPI 实现涂鸦功能；<br>
+										并使用meta进行移动端适配。项目实现涂鸦调色、橡皮擦、保存、一键删除等功能。</dd>
+									<dt>预览链接</dt>
+									<dd> <a href="https://lynchuh.github.io/canvas-demo/index.html"> https://lynchuh.github.io/canvas-demo/index.html</a></dd>
+									<dt>源码链接</dt>
+									<dd> <a href="https://github.com/lynchuh/canvas-demo"> https://github.com/lynchuh/canvas-demo</a></dd>
+								</dl>
+							</div>
+						</div>	
+					</wired-card>
+				</li>
+			</ol>
+			<!-- </div> -->
 		</div>
 	</section>
 	<section data-x class="message" id="message">
-		<h2>留言</h2>
+		<wired-card elevation="1">
+			<h2>留言</h2>
+		</wired-card>
+		
 		<div class="messageWrapper">
+			
 			<ol id="messageList">
 				
 			</ol>
@@ -185,18 +282,17 @@
 			</form>
 		</div>
 	</section>
-	<script src="./JS/swiper.min.js"></script>
-	<script src="//at.alicdn.com/t/font_590080_eorv2doo1qvvx6r.js"></script>
 	<script src="./JS/Tween.js"></script>
 	<script src="//cdn.jsdelivr.net/npm/leancloud-storage@3.7.0/dist/av-min.js"></script>
-
+	<script src="./JS/wired-elements.bundled.min.js"></script>
+	<script src="./JS/jquery-3.3.1.min.js"></script>
 
 
 	<script src="./JS/model/auto-slide-up.js"></script>
-	<script src="./JS/model/init-swiper.js"></script>
 	<script src="./JS/model/smoothly-navigation.js"></script>
 	<script src="./JS/model/sticky-topBar.js"></script>
 	<script src="./JS/model/submenu.js"></script>
 	<script src="./JS/model/postMessage.js"></script>
+	<script src="/skillList.js"></script>
 </body>
 </html>

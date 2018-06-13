@@ -25,7 +25,7 @@
         },
         scrollToElement:function(selectElement){
             let currentTop = {y: window.scrollY}
-            let targetTop = { y:(selectElement.offsetTop-80)}
+            let targetTop = { y:(selectElement.offsetTop-120)}
             t = (Math.abs(targetTop.y - currentTop.y)/100)*300
             if(t>500){t=500}
             //TWEEN

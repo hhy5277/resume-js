@@ -8,6 +8,14 @@
         },
         fetch:function(){
             var query = new AV.Query('Messages');
+            query.descending('createdAt');
+     
+     
+     
+     
+     
+     
+     
             return query.find()
         },
         save:function(name,content){
@@ -41,7 +49,16 @@
             let myForm = this.form
             let content = myForm.querySelector('input[name=content]').value
             let name = myForm.querySelector('input[name=name]').value
-            this.model.save(name, content).then(this.appendMessages)
+            this.model.save(name, content).then((messages)=>{
+                let li=document.createElement('li')
+                if(messages.attributes.name !=='' && messages.attributes.content !==''){
+                    li.innerText= `${messages.attributes.name}：${messages.attributes.content}`
+                    $(this.messageList).prepend(li)
+                }else if(messages.attributes.name === ''&&this.messages.attributes.content !==''){
+                    li.innerText= `匿名用户：${messages.attributes.content}`
+                    $(this.messageList).prepend(li)
+                }
+            })
         },
         loadMessages:function(){
             this.model.fetch().then(this.appendMessages)

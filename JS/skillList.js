@@ -37,26 +37,3 @@
 
 }.call()
 
-// let $skills = $('#siteSkills .skillItem wired-item')
-// let $skillContent = $('#siteSkills .skillContents')
-
-
-// for(let i=0;i<$skills.length;i++){
-//     $($skills[i]).on('click',(e,callback)=>{
-//         let index = $(e.currentTarget).index()
-//         let $lastContent = $($skillContent[$skillContent.length-1])
-//         let $currentContent = $($skillContent[index])
-
-//         if(index===0){
-//             $($skillContent[index]).show()
-//             $lastContent.hide()
-//             $($skillContent[index]).addClass('active').siblings().removeClass('active')
-//         }else{
-//             $($skillContent[index]).show()
-//             console.log($currentContent)
-//             $currentContent.prev().hide()
-//             $currentContent.addClass('active').siblings().removeClass('active')       
-//         }
-
-//     })
-// }

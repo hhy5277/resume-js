@@ -38,7 +38,7 @@ ol,li{list-style-type: none;margin: 0;border: 0;padding: 0;}
 }
 
 /* 背景图样式 */
-.banner{background-image: url(./rs-cover.jpg);height: 515px;background-position: center;background-size: cover;}
+.banner{background-image: url(../img/rs-cover.jpg);height: 515px;background-position: center;background-size: cover;}
 .banner .mask{background-color: rgba(0, 0, 0,0.8);height: 515px;}
 
 /*个人信息框样式*/
